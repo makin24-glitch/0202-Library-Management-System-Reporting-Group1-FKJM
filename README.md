@@ -63,6 +63,25 @@ Our dashboard provides **automated reporting**, **real-time analytics**, and **a
 [Requirements](requirements.txt)  
 
 ---
+Setup instructions (how to run CLI)
+---
+Provide usage examples for key methods
+---
+Document method overview and organization
+---
+Add contribution guidelines for team members
+---
+Include class hierarchy diagram (for Project 02/03)
+---
+Document polymorphism examples (for Project 03)
+---
+
+
+
+
+
+
+---
 
 ## 👥 Contributors  
 Team Members: Jordan Mutunzi, Keran Leukeu, Mayowa Akinrodoye, and Francis Okeagu*  
