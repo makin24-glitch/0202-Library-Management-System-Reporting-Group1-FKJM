@@ -66,3 +66,5 @@ Our dashboard provides **automated reporting**, **real-time analytics**, and **a
 
 ## 👥 Contributors  
 Team Members: Jordan Mutunzi, Keran Leukeu, Mayowa Akinrodoye, and Francis Okeagu*  
+
+(This will be our new project going forward)
