@@ -31,6 +31,13 @@ class Member:
             _active: Account status (default: True)
             _fines_owed: Current outstanding fines (default: 0.0)
         """
+
+         self._member_id = member_id
+        self._name = name
+        self._email = email
+        self._join_date = join_date
+        self._active = True  # default status
+        
         # Validate all parameters
         # Set private attributes
         pass
