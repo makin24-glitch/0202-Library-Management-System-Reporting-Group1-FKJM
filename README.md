@@ -422,13 +422,45 @@ Communication
 
 ### Inheritance Hierarchies
 ## AbstractLibraryItem hierarchy 
-    **AbstractLibraryItem** (Abstract Base Class - that uses the simple library item)  
-      **Book** — printed or digital reading material  
-      **DVD** — optical media for movies or video content  
-      **Journal** — periodicals, academic publications, or magazines  
+       
+      AbstractLibraryItem (Abstract Base Class - that uses the simple library item)  
+      ├── Book — printed or digital reading material  
+      ├── DVD — optical media for movies or video content  
+      └── Journal — periodicals, academic publications, or magazines  
 
+## Composition Relationships
+    * **Catalog** contains:
+        * Books 
+        * DVDs 
+        * Journals 
+      
+### Key Features 
+  ## 1. Polymorphic Behavior 
+Same method calls produce different results based on object type:
+      * calculate_loan_period() - Book (14 days) vs. DVD (7 days) vs. Journal (3 days)
+      * calculate_replacement_cost() - Book (based on publication year) vs. DVD (based on format) vs. Journal (based on volume/issue)
+      * format_display() - Different formatting for book details (author, pages) vs. DVD details (duration, rating) vs. Journal details (volume, issue, publisher)
+      * check_availability() - Uniform availability checking across all item types
+      * update_status() - Status transitions work consistently for books, DVDs, and journals
+      
+  ## 2. Abstract Base Classes 
+      * AbstractLibraryItem - Requires calculate_loan_period(),
+      calculate_replacement_cost(), check_availability(), format_display(), and
+      update_status() methods
+      
+  ## 3. Composition Over Inheritance 
+      * Catalog coordinates multiple LibraryItem objects without being a type of item
+      * Checkout links Member and LibraryItem together without inheriting from either
+      * Flexible "has-a" relationships enable system scalability:
+          * Catalog can contain unlimited items of any type
+          * Checkout can link any member to any item
+          * Member can have multiple active checkouts simultaneously
+
+
+
+      
 ---
-
+### 
 Document polymorphism examples (for Project 03)
 Details here...
 ---
