@@ -82,18 +82,18 @@ Our dashboard provides **automated reporting**, **real-time analytics**, and **a
 
 
 # Quick Start
-  Once the program starts, you'll see the main menu:
-  =================================
-  LIBRARY MANAGEMENT DASHBOARD
-  =================================
-  1. Search Catalog
-  2. Check Out Item
-  3. Return Item
-  4. View Member Info
-  5. Calculate Fines
-  6. Exit
-  =================================
-  Enter your choice:
+      Once the program starts, you'll see the main menu:
+      =================================
+      LIBRARY MANAGEMENT DASHBOARD
+      =================================
+      1. Search Catalog
+      2. Check Out Item
+      3. Return Item
+      4. View Member Info
+      5. Calculate Fines
+      6. Exit
+      =================================
+      Enter your choice:
 
 
 ---
@@ -325,24 +325,24 @@ Output:
 (more methods to come)
 
 ## Method Integration Workflow (tentative)
-#  Complete Checkout Process:
-  Step 1: Validate member
-  → validate_member_id("MEM12345") → True ✓
-
-  Step 2: Search for item
-    → search_catalog("python", catalog) → Shows results
+  #  Complete Checkout Process:
+    Step 1: Validate member
+    → validate_member_id("MEM12345") → True ✓
   
-  Step 3: Check availability
-    → check_item_availability("BOOK001", catalog) → True ✓
-    → format_item_display(item_data) → Shows formatted details
-  
-  Step 4: Process checkout
-    → generate_checkout_record("MEM12345", "BOOK001", "2024-11-01")
-    → calculate_due_date("2024-11-01", 14) → "2024-11-15"
-    → update_item_status("BOOK001", "checked_out")
-  
-  Step 5: Display confirmation
-    → "Checkout complete! Due: November 15, 2024"
+    Step 2: Search for item
+      → search_catalog("python", catalog) → Shows results
+    
+    Step 3: Check availability
+      → check_item_availability("BOOK001", catalog) → True ✓
+      → format_item_display(item_data) → Shows formatted details
+    
+    Step 4: Process checkout
+      → generate_checkout_record("MEM12345", "BOOK001", "2024-11-01")
+      → calculate_due_date("2024-11-01", 14) → "2024-11-15"
+      → update_item_status("BOOK001", "checked_out")
+    
+    Step 5: Display confirmation
+      → "Checkout complete! Due: November 15, 2024"
 
 ---
 ### Method overview and organization
@@ -371,17 +371,17 @@ Our library dashboard uses 8 core methods organized into 4 functional areas:
   format_item_display() - Formats item info for CLI presentation
   search_catalog() - Finds items matching search query
 ## System Architecture
-  User Input (CLI)
-      ↓
-  Validation Layer (validate_member_id, check_item_availability)
+    User Input (CLI)
         ↓
-  Business Logic Layer (calculate_due_date, compute_overdue_fine)
-        ↓
-  Data Layer (generate_checkout_record, update_item_status)
-        ↓
-  Display Layer (format_item_display, search_catalog)
-        ↓
-  User Output (CLI)
+    Validation Layer (validate_member_id, check_item_availability)
+          ↓
+    Business Logic Layer (calculate_due_date, compute_overdue_fine)
+          ↓
+    Data Layer (generate_checkout_record, update_item_status)
+          ↓
+    Display Layer (format_item_display, search_catalog)
+          ↓
+    User Output (CLI)
 
 ### Method Integration
 Our methods work together to create complete workflows:
@@ -422,19 +422,16 @@ Communication
 
 ### Inheritance Hierarchies
 ## AbstractLibraryItem hierarchy 
-**AbstractLibraryItem** (Abstract Base Class - that uses the simple library item)  
-- **Book** — printed or digital reading material  
-- **DVD** — optical media for movies or video content  
-- **Journal** — periodicals, academic publications, or magazines  
+    **AbstractLibraryItem** (Abstract Base Class - that uses the simple library item)  
+    - **Book** — printed or digital reading material  
+    - **DVD** — optical media for movies or video content  
+    - **Journal** — periodicals, academic publications, or magazines  
 
 ---
 
 Document polymorphism examples (for Project 03)
 Details here...
 ---
-
-
-
 
 
 
