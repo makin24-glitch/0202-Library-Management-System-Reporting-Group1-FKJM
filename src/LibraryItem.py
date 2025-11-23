@@ -1,156 +1,96 @@
-class LibraryItem:
-    """
-    Represents a general item in the library catalog.
-    Serves as the base class for specific item types (Book, DVD, Journal).
-    """
-    
-    def __init__(self, item_id, title, item_type, loan_period=14):
+"""
+Concrete library item classes for the Library Management System.
+
+This module defines specific library items (Book, DVD, Journal) that inherit
+from AbstractLibraryItem and follow the interface requirements.
+"""
+
+from abc import ABC
+from abstract_library_item import AbstractLibraryItem  # assuming your ABC is in this file
+
+
+class Book(AbstractLibraryItem):
+    """Concrete class representing a book."""
+
+    def __init__(self, item_id: str, title: str, author: str, status: str = "available"):
         """
-        Initialize a library item with validation.
-        
+        Initialize a Book object.
+
         Args:
-            item_id (str): Unique identifier for the item
-            title (str): Title of the item
-            item_type (str): Type of item ('book', 'dvd', 'journal')
-            loan_period (int): Number of days item can be borrowed (default: 14)
-            
-        Raises:
-            ValueError: If item_id or title is empty, or loan_period is negative
-            TypeError: If parameters are not the correct type
+            item_id (str): Unique ID for the book
+            title (str): Book title
+            author (str): Book author
+            status (str, optional): Availability status ("available"/"checked_out")
         """
-        # Validation
-        if not isinstance(item_id, str) or not item_id.strip():
-            raise ValueError("Item ID must be a non-empty string")
-        if not isinstance(title, str) or not title.strip():
-            raise ValueError("Title must be a non-empty string")
-        if not isinstance(loan_period, int) or loan_period < 0:
-            raise ValueError("Loan period must be a non-negative integer")
-        
-        # Private attributes (encapsulation)
-        self._item_id = item_id
-        self._title = title
-        self._item_type = item_type
-        self._loan_period = loan_period
-        self._status = "available"  # Default status
-    
-    # Property decorators for controlled access
-    @property
-    def item_id(self):
-        """str: Get the item ID (read-only)."""
-        '''return self._item_id'''
-    
-    @property
-    def title(self):
-        """str: Get the item title."""
-        '''return self._title'''
-    
-    @title.setter
-    def title(self, value):
-        """Set the item title with validation."""
-        if not isinstance(value, str) or not value.strip():
-            raise ValueError("Title must be a non-empty string")
-        '''self._title = value'''
-    
-    @property
-    def item_type(self):
-        """str: Get the item type (read-only)."""
-        '''return self._item_type'''
-    
-    @property
-    def loan_period(self):
-        """int: Get the loan period in days."""
-        '''return self._loan_period'''
-    
-    @property
-    def status(self):
-        """str: Get the current status of the item."""
-        '''return self._status'''
-    
-    # Integrated methods from your 8 core functions
-    def check_availability(self, item_id, catalog):
-        """
-        Check if a specific item is available in the catalog.
-        
-        Args:
-            item_id (str): Unique identifier for the library item
-            catalog (dict/list): Collection of library items with status
-        
-        Returns:
-            bool: True if available, False if checked out
-        """
-        # This method checks ANY item in the catalog, not just this instance
-        '''if isinstance(catalog, dict):
-            if item_id in catalog:
-                return catalog[item_id].get("status") == "available"
-        return False'''
-    
-    def format_display(self, item_data):
-        """
-        Format item information for clean CLI display.
-        
-        Args:
-            item_data (dict): Dictionary containing item information
-        
-        Returns:
-            str: Formatted string representation of the item
-        """
-      
-        '''item_id = item_data.get("id", "N/A")
-        title = item_data.get("title", "Unknown")
-        item_type = item_data.get("type", "Unknown")
-        status = item_data.get("status", "unknown")
-        
-        status_symbol = "✓" if status == "available" else "✗"
-        return (
-            f"╔════════════════════════════════════════╗\n"
-            f"║ [{item_id}] {title:<30} ║\n"
-            f"║ Type: {item_type:<10} | Status: {status_symbol} {status:<10} ║\n"
-            f"╚════════════════════════════════════════╝"
-        )'''
-    
-    def update_status(self, item_id, new_status):
-        """
-        Update the status of a library item.
-        
-        Args:
-            item_id (str): ID of item to update
-            new_status (str): New status value ('available', 'checked_out', 'maintenance')
-        
-        Returns:
-            bool: True if update successful, False otherwise
-            
-        Raises:
-            ValueError: If new_status is not a valid status value
-        """
-        valid_statuses = ["available", "checked_out", "maintenance", "lost"]
-        #if new_status not in valid_statuses:
-            #raise ValueError(f"Status must be one of {valid_statuses}")
-        
-        # Update this instance if the item_id matches
-        #if self._item_id == item_id:
-            #self._status = new_status
-            #return True
-        
-        #return False
-    
-    # String representation methods
+        super().__init__(item_id, title, "Book", status)
+        self.author = author
+        # self.transactions and self.tags inherited from ABC
+
+    def calculate_loan_period(self):
+        """Calculate loan period for a book. Future logic: typically 14 days."""
+        pass
+
+    def calculate_replacement_cost(self):
+        """Calculate replacement cost for a book."""
+        pass
+
     def __str__(self):
+        return f"{self.title} by {self.author} ({self.item_id})"
+
+
+class DVD(AbstractLibraryItem):
+    """Concrete class representing a DVD."""
+
+    def __init__(self, item_id: str, title: str, runtime_minutes: int, status: str = "available"):
         """
-        User-friendly string representation for display.
-        
-        Returns:
-            str: Human-readable description of the item
+        Initialize a DVD object.
+
+        Args:
+            item_id (str): Unique ID
+            title (str): DVD title
+            runtime_minutes (int): Duration in minutes
+            status (str, optional): Availability
         """
-        #status = "Available" if self._status == "available" else f"{self._status.replace('_', ' ').title()}"
-        #return f"{self._title} ({self._item_type}) - {status}"
-    
-    def __repr__(self):
+        super().__init__(item_id, title, "DVD", status)
+        self.runtime_minutes = runtime_minutes
+
+    def calculate_loan_period(self):
+        """Calculate loan period for a DVD. Future logic: typically 7 days."""
+        pass
+
+    def calculate_replacement_cost(self):
+        """Calculate replacement cost for a DVD."""
+        pass
+
+    def __str__(self):
+        return f"{self.title} ({self.runtime_minutes} mins) [{self.item_id}]"
+
+
+class Journal(AbstractLibraryItem):
+    """Concrete class representing a journal."""
+
+    def __init__(self, item_id: str, title: str, volume: str, issue: str, status: str = "available"):
         """
-        Developer-friendly string representation for debugging.
-        
-        Returns:
-            str: Unambiguous representation of the LibraryItem object
+        Initialize a Journal object.
+
+        Args:
+            item_id (str): Unique ID
+            title (str): Journal title
+            volume (str): Volume number
+            issue (str): Issue number
+            status (str, optional): Availability
         """
-        #return (f"LibraryItem(item_id='{self._item_id}', title='{self._title}', "
-                #f"item_type='{self._item_type}', loan_period={self._loan_period}, "
-                #f"status='{self._status}')")
+        super().__init__(item_id, title, "Journal", status)
+        self.volume = volume
+        self.issue = issue
+
+    def calculate_loan_period(self):
+        """Calculate loan period for a journal. Future logic: typically 3 days."""
+        pass
+
+    def calculate_replacement_cost(self):
+        """Calculate replacement cost for a journal."""
+        pass
+
+    def __str__(self):
+        return f"{self.title} Vol:{self.volume} Issue:{self.issue} ({self.item_id})"
