@@ -423,9 +423,9 @@ Communication
 ### Inheritance Hierarchies
 ## AbstractLibraryItem hierarchy 
     **AbstractLibraryItem** (Abstract Base Class - that uses the simple library item)  
-    - **Book** — printed or digital reading material  
-    - **DVD** — optical media for movies or video content  
-    - **Journal** — periodicals, academic publications, or magazines  
+      **Book** — printed or digital reading material  
+      **DVD** — optical media for movies or video content  
+      **Journal** — periodicals, academic publications, or magazines  
 
 ---
 
