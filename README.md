@@ -1,7 +1,7 @@
 # 0202-Library-Management-System-Reporting-Group1-FKJM
 Reporting and Analytics Dashboard Project for INST 326 Object-Oriented Programming
 
-(This will be our final repo that will be used to complete Project 3 requirements and final submission )
+(This will be our repository moving forward)
 
 ## 🏗️ Introduction 
 This project focuses on building a **Library/Information Center Management Dashboard** that provides **reporting and analytics tools** to help library staff, administrators, and stakeholders manage operations more efficiently.  
