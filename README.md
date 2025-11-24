@@ -370,6 +370,7 @@ Our library dashboard uses 8 core methods organized into 4 functional areas:
   
   format_item_display() - Formats item info for CLI presentation
   search_catalog() - Finds items matching search query
+
 ## System Architecture
     User Input (CLI)
         ↓
@@ -391,28 +392,28 @@ Our methods work together to create complete workflows:
   Search Flow: Uses 2 methods (search → format)
 
 ---
-###Contribution Guidelines
+### Contribution Guidelines
 
 Team Member Assignments
-Phase 1 - Method Implementation:
-  Jordan Mutunzi: validate_member_id, calculate_due_date
-  Keran Leukeu: compute_overdue_fine, check_item_availability
-  Mayowa Akinrodoye: format_item_display, generate_checkout_record
-  Francis Okeagu: search_catalog, update_item_status
+- Phase 1 - Method Implementation:
+  - Jordan Mutunzi: validate_member_id, calculate_due_date
+  - Keran Leukeu: compute_overdue_fine, check_item_availability
+  - Mayowa Akinrodoye: format_item_display, generate_checkout_record
+  - Francis Okeagu: search_catalog, update_item_status
 
-Phase 2 - Class Implementation (Project 02):
-  Jordan: Member class, Checkout class
-  Keran: LibraryItem class, Book class
-  Mayowa: Catalog class, DVD class
-  Francis: Journal class, CLI interface
+- Phase 2 - Class Implementation (Project 02):
+  - Jordan: Member class, Checkout class
+  - Keran: LibraryItem class, Book class
+  - Mayowa: Catalog class, DVD class
+  - Francis: Journal class, CLI interface
 
-Phase 3 - Advanced OOP (Project 03):
-  Jordan: AbstractLibraryItem, inheritance refactoring
-  Keran: Polymorphism demonstration, test suite
-  Mayowa: Composition relationships, architecture documentation
-  Francis: Demo scripts, integration testing
+- Phase 3 - Advanced OOP (Project 03):
+  - Jordan: AbstractLibraryItem, inheritance refactoring
+  - Keran: Polymorphism demonstration, test suite
+  - Mayowa: Composition relationships, architecture documentation
+  - Francis: Demo scripts, integration testing
 
-Communication
+### Communication
   Team Meetings: Weekly on Mondays at 6 PM
   Code Reviews: Within 24 hours of PR submission
   Questions/Issues: Post in team Discord channel
@@ -437,42 +438,45 @@ Communication
 ### Key Features 
   ## 1. Polymorphic Behavior 
 Same method calls produce different results based on object type:
-- calculate_loan_period() - Book (14 days) vs. DVD (7 days) vs. Journal (3 days)
-- calculate_replacement_cost() - Book (based on publication year) vs. DVD (based on format) vs. Journal (based on volume/issue)
-- format_display() - Different formatting for book details (author, pages) vs. DVD details (duration, rating) vs. Journal details (volume, issue, publisher)
-- check_availability() - Uniform availability checking across all item types
-- update_status() - Status transitions work consistently for books, DVDs, and journals
+  - **calculate_loan_period()** - Book (14 days) vs. DVD (7 days) vs. Journal (3 days)
+  - **calculate_replacement_cost()** - Book (based on publication year) vs. DVD (based
+    on format) vs. Journal (based on volume/issue)
+  - **format_display()** - Different formatting for book details (author, pages) vs. DVD details (duration, rating) vs. Journal details (volume, issue, publisher)
+  - **check_availability()** - Uniform availability checking across all item types
+  - **update_status()** - Status transitions work consistently for books, DVDs, and journals
       
   ## 2. Abstract Base Classes 
     - AbstractLibraryItem - Requires calculate_loan_period(),
-      calculate_replacement_cost(), check_availability(), format_display(), and
-      update_status() methods
+        calculate_replacement_cost(), check_availability(), format_display(), and
+        update_status() methods
       
   ## 3. Composition Over Inheritance 
-  - Catalog coordinates multiple LibraryItem objects without being a type of item
-  - Checkout links Member and LibraryItem together without inheriting from either
-  - Flexible "has-a" relationships enable system scalability:
-  - Catalog can contain unlimited items of any type
-    - Checkout can link any member to any item
-    - Member can have multiple active checkouts simultaneously
+    - **Catalog()** coordinates multiple LibraryItem objects without being a type of
+    item
+    - **Checkout()** links Member and LibraryItem together without inheriting from
+    either
+    - Flexible "has-a" relationships enable system scalability:
+    - **Catalog()** can contain unlimited items of any type
+      - **Checkout()** can link any member to any item
+      - **Member()** can have multiple active checkouts simultaneously
 
 
 # 🎯 SUMMARY
 
 ## Composition in Our System
-- **Catalog** contains multiple `LibraryItem` objects  
-- **Checkout** links `Member` and `LibraryItem` together  
-- Used because these are **container/relationship classes**, not specializations  
+  - **Catalog** contains multiple `LibraryItem` objects  
+  - **Checkout** links `Member` and `LibraryItem` together  
+  - Used because these are **container/relationship classes**, not specializations  
 
 ## Polymorphism in Our System
-- Same method (`calculate_loan_period()`) works differently for `Book` / `DVD` / `Journal`  
-- Base class references automatically call the correct derived method  
-- CLI handles all item types uniformly **without needing type checks**  
+  - Same method (`calculate_loan_period()`) works differently for `Book` / `DVD` /       `Journal`  
+  - Base class references automatically call the correct derived method  
+  - CLI handles all item types uniformly **without needing type checks**  
 
 ## Why Both Matter
-- **Composition** = How objects are structured and combined  
-- **Polymorphism** = How objects behave differently while sharing an interface  
-- Together they create a **flexible, maintainable, scalable system**
+  - **Composition** = How objects are structured and combined  
+  - **Polymorphism** = How objects behave differently while sharing an interface  
+  - Together they create a **flexible, maintainable, scalable system**
 ---
 
 
