@@ -63,7 +63,7 @@ Our dashboard provides **automated reporting**, **real-time analytics**, and **a
 [Requirements](requirements.txt)  
 
 ---
-## Setup instructions (how to run CLI)
+## Installation & Setup (how to run CLI)
 
 # Prerequisites
 - Python 3.8 or higher
@@ -71,14 +71,12 @@ Our dashboard provides **automated reporting**, **real-time analytics**, and **a
 - Terminal/Command Line access
 
 # Installation Steps
-  1. Clone the repository
-    git clone https://github.com/your-team/0202-Library-Management-System-Reporting-Group1-FKJM.git
-     cd 0202-Library-Management-System-Reporting-Group1-FKJM
-     
-  2. Install dependencies (if any)
-      pip install -r requirements.txt
-  
-  3. Run the CLI Dashboard
+     git clone https://github.com/your-team/0202-Library-Management-System-Reporting-Group1-FKJM.git
+    cd 0202-Library-Management-System-Reporting-Group1-FKJM
+    pip install -r requirements.txt
+
+# Run the CLI Dashboard
+      python main.py
 
 
 # Quick Start
@@ -98,36 +96,30 @@ Our dashboard provides **automated reporting**, **real-time analytics**, and **a
 
 ---
 
-## Usage Examples* 
-(' * ' - to be changed)
+## Usage Examples (subject to change)
 
 ### Validating a Member ID - validate_member_id(member_id)
 Description: Check if a member ID is valid before processing checkout
-Input: member_id (string)
-Output: True/False
-Example: validate_member_id("MEM12345") → True
+Input: member_id (str)
+Output: bool
 
-## Usage Example:
+#### Usage Example:
     member_id = "MEM12345"
     is_valid = validate_member_id(member_id)
     # Result: True
-## CLI Context: 
+#### CLI Context: 
     Enter Member ID: MEM12345
     System: ✓ Valid member - Alice Johnson
     Proceed with checkout? (y/n):
 
 ### Calculating Due Date - calculate_due_date(checkout_date, loan_period)
-Description: Determine when an item must be returned
-Input: checkout_date (date), loan_period (integer days)
-Output: due_date (date)
-Example: calculate_due_date("2024-11-01", 14) → "2024-11-15"
-
-## Usage Example:
+Description: Determine return deadline
+#### Usage Example:
     checkout_date = "2024-11-01"
     loan_period = 14  # days
     due_date = calculate_due_date(checkout_date, loan_period)
     # Result: "2024-11-15"
-## CLI Context: 
+#### CLI Context: 
     Checked out: November 1, 2024
     Loan period: 14 days
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -135,22 +127,14 @@ Example: calculate_due_date("2024-11-01", 14) → "2024-11-15"
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ### Compute Overdue Fine - compute_overdue_fine(due_date, return_date, daily_rate) 
-Description: Calculate the fine amount when an item is returned late
-Input:
-    due_date (date/string) - When item should have been returned
-    return_date (date/string) - When item was actually returned
-    daily_rate (float) - Fine amount per day overdue
-
-Output:
-fine_amount (float) - Total fine owed
-
-## Usage Example:
+Description: Calculate late fees
+#### Usage Example:
     due_date = "2024-11-15"
     return_date = "2024-11-20"
     daily_rate = 0.50  # $0.50 per day
     fine = compute_overdue_fine(due_date, return_date, daily_rate)
     # Result: $2.50 (5 days × $0.50/day)
-## CLI Context: 
+#### CLI Context: 
     Item due: November 15, 2024
     Returned: November 20, 2024
     Days overdue: 5
@@ -161,35 +145,11 @@ fine_amount (float) - Total fine owed
     Please collect payment before checkout
 
 ### Check_item_availability - check_item_availability(item_id, catalog)
-Description: Verify if a specific item is currently available for checkout
-Input:
-    item_id (string) - Unique identifier for the library item
-    catalog (dict/list) - Collection of library items with status
-Output:
-    Boolean - True if available, False if checked out
+Description: Returns True if available, False if checked out
 
-## Usage Example:
-    item_id = "BOOK001"
-    catalog = {
-        "BOOK001": {"title": "Python Guide", "status": "available"},
-        "DVD002": {"title": "Tutorial Video", "status": "checked_out"}
-    }
-    is_available = check_item_availability(item_id, catalog)
-    # Result: True
-## CLI Context: 
-    Search result: BOOK001 - Python Programming Guide
-    Status check: ✓ Available for checkout
-    
-    Search result: DVD002 - Tutorial Video  
-    Status check: ✗ Currently checked out (due back: Nov 25)
 
 ### Format Item Display - format_item_display(item_data)
 Description: Format item information for clean display in the command-line interface
-Input:
-    item_data (dict) - Dictionary containing item information
-
-Output:
-    formatted_string (string) - Nicely formatted text for CLI display
 
 ## Usage Example:
     item_data = {
@@ -222,12 +182,6 @@ Output:
 
 ### Generate Checkout Record - generate_checkout_record(member_id, item_id, checkout_date)
 Description: Create a complete checkout transaction record
-Input:
-    member_id (string) - ID of member checking out item
-    item_id (string) - ID of item being checked out
-    checkout_date (date/string) - Date of checkout
-Output:
-    checkout_record (dict) - Complete transaction record
 
 ## Usage Example:
     member_id = "MEM12345"
@@ -295,11 +249,6 @@ Output:
 
 ### Update Item Status - update_item_status(item_id, new_status)
 Description: Change the status of a library item (e.g., available → checked_out)
-Input:
-    item_id (string) - ID of item to update
-    new_status (string) - New status value ("available", "checked_out", "maintenance", etc.)
-Output:
-    success (boolean) - True if update successful, False otherwise
 
 ## Usage Example:
     item_id = "BOOK001"
@@ -322,7 +271,6 @@ Output:
     ✓ Item returned and now available
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-(more methods to come)
 
 ## Method Integration Workflow (tentative)
   #  Complete Checkout Process:
@@ -345,31 +293,27 @@ Output:
       → "Checkout complete! Due: November 15, 2024"
 
 ---
-### Method overview and organization
-Our library dashboard uses 8 core methods organized into 4 functional areas:
-## 1. Validation Methods (2 methods)
-  These methods ensure data integrity before processing:
-  
-  validate_member_id() - Verifies member exists in system
-  check_item_availability() - Confirms item can be checked out
 
-## 2. Calculation Methods (2 methods)
-  These methods perform date and financial calculations:
-  
-  calculate_due_date() - Computes return deadline based on loan period
-  compute_overdue_fine() - Calculates late fees based on days overdue
+---
 
-## 3. Data Management Methods (2 methods)
-  These methods create and update records:
-  
-  generate_checkout_record() - Creates complete checkout transaction
-  update_item_status() - Changes item availability status
+## Method Overview & Organization
+# Validation Methods
+  - validate_member_id()
+  - check_item_availability()
+  - 
+# Calculation Methods
+  - calculate_due_date()
+  - compute_overdue_fine()
 
-## 4. Display & Search Methods (2 methods)
-  These methods handle user interface and data retrieval:
-  
-  format_item_display() - Formats item info for CLI presentation
-  search_catalog() - Finds items matching search query
+# Data Management Methods
+  - generate_checkout_record()
+  - update_item_status()
+
+# Display & Search Methods
+  - format_item_display()
+  - search_catalog()
+    
+---
 
 ## System Architecture
     User Input (CLI)
@@ -383,15 +327,50 @@ Our library dashboard uses 8 core methods organized into 4 functional areas:
     Display Layer (format_item_display, search_catalog)
           ↓
     User Output (CLI)
+---
 
-### Method Integration
-Our methods work together to create complete workflows:
+### Inheritance Hierarchies
+  ## AbstractLibraryItem hierarchy      
+      AbstractLibraryItem (Abstract Base Class - that uses the simple library item)  
+      ├── Book — printed or digital reading material  
+      ├── DVD — optical media for movies or video content  
+      └── Journal — periodicals, academic publications, or magazines  
 
-  Checkout Flow: Uses 6 methods (validate → search → check → generate → calculate → update)
-  Return Flow: Uses 3 methods (compute → update → format)
-  Search Flow: Uses 2 methods (search → format)
+## Polymorphic Behavior
+  - calculate_loan_period()
+  - calculate_replacement_cost()
+  - format_display()
+  - check_availability()
+  - update_status()
+--- 
+
+## Composition Relationships
+  - **Catalog** contains Books, DVDs, and Journals.
+    - **Checkout** links Member and LibraryItem
+    - **Member** can have multiple active checkouts
+---
+
+# 🎯 SUMMARY
+
+## Composition in Our System
+  - **Catalog** contains multiple `LibraryItem` objects  
+  - **Checkout** links `Member` and `LibraryItem` together  
+  - Used because these are **container/relationship classes**, not specializations  
+
+## Polymorphism in Our System
+  - Same method (`calculate_loan_period()`) works differently for `Book` / `DVD` /       `Journal`  
+  - Base class references automatically call the correct derived method  
+  - CLI handles all item types uniformly **without needing type checks**  
+
+## Why Both Matter
+  - **Composition** = How objects are structured and combined  
+  - **Polymorphism** = How objects behave differently while sharing an interface  
+  - Together they create a **flexible, maintainable, scalable system**
+---
+
 
 ---
+
 ### Contribution Guidelines
 
 Team Member Assignments
@@ -417,69 +396,7 @@ Team Member Assignments
   Team Meetings: Weekly on Mondays at 6 PM
   Code Reviews: Within 24 hours of PR submission
   Questions/Issues: Post in team Discord channel
-  Blockers: Tag team in GitHub issue immediately
-  
----
-
-### Inheritance Hierarchies
-## AbstractLibraryItem hierarchy 
-       
-      AbstractLibraryItem (Abstract Base Class - that uses the simple library item)  
-      ├── Book — printed or digital reading material  
-      ├── DVD — optical media for movies or video content  
-      └── Journal — periodicals, academic publications, or magazines  
-
-## Composition Relationships
-  - **Catalog** contains:
-    - Books 
-    - DVDs 
-    - Journals 
-      
-### Key Features 
-  ## 1. Polymorphic Behavior 
-Same method calls produce different results based on object type:
-  - **calculate_loan_period()** - Book (14 days) vs. DVD (7 days) vs. Journal (3 days)
-  - **calculate_replacement_cost()** - Book (based on publication year) vs. DVD (based
-    on format) vs. Journal (based on volume/issue)
-  - **format_display()** - Different formatting for book details (author, pages) vs. DVD details (duration, rating) vs. Journal details (volume, issue, publisher)
-  - **check_availability()** - Uniform availability checking across all item types
-  - **update_status()** - Status transitions work consistently for books, DVDs, and journals
-      
-  ## 2. Abstract Base Classes 
-    - AbstractLibraryItem - Requires calculate_loan_period(),
-        calculate_replacement_cost(), check_availability(), format_display(), and
-        update_status() methods
-      
-  ## 3. Composition Over Inheritance 
-  - **Catalog()** coordinates multiple LibraryItem objects without being a type of
-  item
-  - **Checkout()** links Member and LibraryItem together without inheriting from
-  either
-  - Flexible "has-a" relationships enable system scalability:
-  - **Catalog()** can contain unlimited items of any type
-    - **Checkout()** can link any member to any item
-    - **Member()** can have multiple active checkouts simultaneously
-
-
-# 🎯 SUMMARY
-
-## Composition in Our System
-  - **Catalog** contains multiple `LibraryItem` objects  
-  - **Checkout** links `Member` and `LibraryItem` together  
-  - Used because these are **container/relationship classes**, not specializations  
-
-## Polymorphism in Our System
-  - Same method (`calculate_loan_period()`) works differently for `Book` / `DVD` /       `Journal`  
-  - Base class references automatically call the correct derived method  
-  - CLI handles all item types uniformly **without needing type checks**  
-
-## Why Both Matter
-  - **Composition** = How objects are structured and combined  
-  - **Polymorphism** = How objects behave differently while sharing an interface  
-  - Together they create a **flexible, maintainable, scalable system**
----
-
-
+  Blockers: Tag team in GitHub issue immediately  
 ---
 
 ## 👥 Contributors  
