@@ -350,7 +350,7 @@ Description: Change the status of a library item (e.g., available → checked_ou
     - **Member** can have multiple active checkouts
 ---
 
-# 🎯 SUMMARY
+## 🎯 SUMMARY
 
 ## Composition in Our System
   - **Catalog** contains multiple `LibraryItem` objects  
