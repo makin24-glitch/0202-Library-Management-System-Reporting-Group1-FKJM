@@ -451,14 +451,14 @@ Same method calls produce different results based on object type:
         update_status() methods
       
   ## 3. Composition Over Inheritance 
-    - **Catalog()** coordinates multiple LibraryItem objects without being a type of
-    item
-    - **Checkout()** links Member and LibraryItem together without inheriting from
-    either
-    - Flexible "has-a" relationships enable system scalability:
-    - **Catalog()** can contain unlimited items of any type
-      - **Checkout()** can link any member to any item
-      - **Member()** can have multiple active checkouts simultaneously
+  - **Catalog()** coordinates multiple LibraryItem objects without being a type of
+  item
+  - **Checkout()** links Member and LibraryItem together without inheriting from
+  either
+  - Flexible "has-a" relationships enable system scalability:
+  - **Catalog()** can contain unlimited items of any type
+    - **Checkout()** can link any member to any item
+    - **Member()** can have multiple active checkouts simultaneously
 
 
 # 🎯 SUMMARY
