@@ -297,11 +297,11 @@ Description: Change the status of a library item (e.g., available → checked_ou
 ---
 
 ## Method Overview & Organization
-# Validation Methods
+## Validation Methods
   - validate_member_id()
   - check_item_availability()
-  - 
-# Calculation Methods
+    
+## Calculation Methods
   - calculate_due_date()
   - compute_overdue_fine()
 
@@ -329,8 +329,8 @@ Description: Change the status of a library item (e.g., available → checked_ou
     User Output (CLI)
 ---
 
-### Inheritance Hierarchies
-  ## AbstractLibraryItem hierarchy      
+## Inheritance Hierarchies
+  ### AbstractLibraryItem hierarchy      
       AbstractLibraryItem (Abstract Base Class - that uses the simple library item)  
       ├── Book — printed or digital reading material  
       ├── DVD — optical media for movies or video content  
@@ -352,26 +352,23 @@ Description: Change the status of a library item (e.g., available → checked_ou
 
 ## 🎯 SUMMARY
 
-## Composition in Our System
+Composition in Our System
   - **Catalog** contains multiple `LibraryItem` objects  
   - **Checkout** links `Member` and `LibraryItem` together  
   - Used because these are **container/relationship classes**, not specializations  
 
-## Polymorphism in Our System
+Polymorphism in Our System
   - Same method (`calculate_loan_period()`) works differently for `Book` / `DVD` /       `Journal`  
   - Base class references automatically call the correct derived method  
   - CLI handles all item types uniformly **without needing type checks**  
 
-## Why Both Matter
+Why Both Matter
   - **Composition** = How objects are structured and combined  
   - **Polymorphism** = How objects behave differently while sharing an interface  
   - Together they create a **flexible, maintainable, scalable system**
 ---
 
-
----
-
-### Contribution Guidelines
+## Contribution Guidelines
 
 Team Member Assignments
 - Phase 1 - Method Implementation:
