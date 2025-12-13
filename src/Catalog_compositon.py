@@ -98,7 +98,7 @@ class Catalog:
         pass
     
     # Integrated method from original: search_catalog(query, catalog_data)
-    def search_catalog(self, query, catalog_data):
+    def search_catalog(self, query):
         """
         Search the catalog for items matching a query.
         
