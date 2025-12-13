@@ -39,7 +39,8 @@ class Catalog:
     def total_items(self):
         """int: Get the total number of items in catalog."""
         # Return private _total_items or len(_items)
-        pass
+        return len(self._items)
+        #pass
     
     def add_item(self, item):
         """
