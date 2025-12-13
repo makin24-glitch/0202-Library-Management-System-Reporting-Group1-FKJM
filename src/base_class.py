@@ -9,6 +9,14 @@ class AbstractLibraryItem(ABC):
     """
 
     def __init__(self, item_id, title, item_type, status="available"):
+        if not item_id or not isinstance(item_id, str):
+            raise ValueError("item_id must be a non-empty string")
+        if not title:
+            raise ValueError("title must be provided")
+        if status not in {"available", "checked_out"}:
+            raise ValueError("Invalid status")
+
+        
         """
         Initialize a library item.
 
@@ -26,30 +34,41 @@ class AbstractLibraryItem(ABC):
         self.transactions = []  # E.g., list of checkouts or history
         self.tags = []          # E.g., keywords or categories
 
+    
     @abstractmethod
+    def calculate_loan_period(self) -> int:
+        pass
+
+    @abstractmethod
+    def calculate_replacement_cost(self) -> float:
+        pass
+
+
+class Book(AbstractLibraryItem):
+    def __init__(self, item_id, title, author, status="available"):
+        super().__init__(item_id, title, "Book", status)
+        self.author = author
+
     def calculate_loan_period(self):
-        """
-        Calculate the loan period for this item.
+        return 14
 
-        Returns:
-            int: Loan period in days
-        """
-        pass
-
-    @abstractmethod
     def calculate_replacement_cost(self):
-        """
-        Calculate the replacement cost for this item.
+        return 25.00
 
-        Returns:
-            float: Replacement cost
-        """
-        pass
+    def __str__(self):
+        return f"{self.title} by {self.author} ({self.item_id})"
 
+class Journal(AbstractLibraryItem):
+    def __init__(self, item_id, title, volume, issue, status="available"):
+        super().__init__(item_id, title, "Journal", status)
+        self.volume = volume
+        self.issue = issue
 
-  @abstractmethod
-  def calculate_replacement_cost():
-    """ Calculates replacement costs
-        Returns: replacement cost
-    """
-    pass
+    def calculate_loan_period(self):
+        return 3
+
+    def calculate_replacement_cost(self):
+        return 30.00
+
+    def __str__(self):
+        return f"{self.title} Vol:{self.volume} Issue:{self.issue} ({self.item_id})"
