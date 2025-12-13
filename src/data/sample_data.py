@@ -119,3 +119,23 @@ SAMPLE_ITEMS = [
         "status": "available"
     }
 ]
+
+
+SAMPLE_DVDS = [
+    {
+        "item_id": "D001",
+        "title": "Inception",
+        "runtime_minutes": 148,
+        "status": "available"
+    }
+]
+
+SAMPLE_JOURNALS = [
+    {
+        "item_id": "J001",
+        "title": "Nature",
+        "volume": "42",
+        "issue": "7",
+        "status": "available"
+    }
+]
