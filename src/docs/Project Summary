@@ -1,0 +1,11 @@
+Architecture Diagram Summary
+
+The Library Management System is structured using a layered, object-oriented architecture that emphasizes inheritance, polymorphism, and composition to model real-world library operations accurately.
+
+At the abstract base layer, the system defines a common interface through the AbstractLibraryItem class. This abstract base class establishes the required attributes and behaviors that all library items must implement, such as calculating loan periods, determining replacement costs, checking availability, updating status, and formatting display output. Using an abstract base class enforces consistency and prevents incomplete item implementations.
+
+The concrete implementation layer consists of item-specific subclasses—Book, DVD, and Journal—that inherit from AbstractLibraryItem. Each subclass provides its own implementation of the abstract methods, allowing different item types to follow different circulation rules. This design enables polymorphism, where the same method call (such as calculate_loan_period() or format_display()) produces different behavior depending on the item type, without requiring conditional logic in higher-level code.
+
+The composition layer coordinates system functionality. The Catalog class maintains and manages collections of library items, the Member class represents library patrons and tracks their checkout activity, and the Checkout class links members with items to represent loan transactions. These relationships are modeled using composition rather than inheritance because these classes “have” or “use” other objects rather than being specializations of them.
+
+Overall, this architecture cleanly separates responsibilities across layers, reduces code duplication, and supports extensibility. New item types or features can be added with minimal changes to existing code, making the system scalable, maintainable, and aligned with core object-oriented design principles.
