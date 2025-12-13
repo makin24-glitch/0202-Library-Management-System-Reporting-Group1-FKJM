@@ -90,3 +90,32 @@ SAMPLE_LOANS = [
     }
 ]
 
+
+# --------------------
+# SAMPLE ITEMS
+# --------------------
+
+SAMPLE_ITEMS = [
+    {
+        "type": "Book",
+        "item_id": "B001",
+        "title": "Python Basics",
+        "author": "Jane Doe",
+        "status": "available"
+    },
+    {
+        "type": "DVD",
+        "item_id": "D010",
+        "title": "OOP Explained",
+        "runtime_minutes": 90,
+        "status": "checked_out"
+    },
+    {
+        "type": "Journal",
+        "item_id": "J100",
+        "title": "Data Science Today",
+        "volume": "12",
+        "issue": "3",
+        "status": "available"
+    }
+]
