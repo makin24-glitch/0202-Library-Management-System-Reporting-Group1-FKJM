@@ -5,7 +5,6 @@ This module defines specific library items (Book, DVD, Journal) that inherit
 from AbstractLibraryItem and follow the interface requirements.
 """
 
-from abc import ABC
 from abstract_library_item import AbstractLibraryItem  # assuming your ABC is in this file
 
 
@@ -28,11 +27,11 @@ class Book(AbstractLibraryItem):
 
     def calculate_loan_period(self):
         """Calculate loan period for a book. Future logic: typically 14 days."""
-        pass
+        return 14
 
     def calculate_replacement_cost(self):
         """Calculate replacement cost for a book."""
-        pass
+        return 25.00
 
     def __str__(self):
         return f"{self.title} by {self.author} ({self.item_id})"
@@ -56,11 +55,11 @@ class DVD(AbstractLibraryItem):
 
     def calculate_loan_period(self):
         """Calculate loan period for a DVD. Future logic: typically 7 days."""
-        pass
+        return 7
 
     def calculate_replacement_cost(self):
         """Calculate replacement cost for a DVD."""
-        pass
+        return 40.00
 
     def __str__(self):
         return f"{self.title} ({self.runtime_minutes} mins) [{self.item_id}]"
@@ -68,29 +67,3 @@ class DVD(AbstractLibraryItem):
 
 class Journal(AbstractLibraryItem):
     """Concrete class representing a journal."""
-
-    def __init__(self, item_id: str, title: str, volume: str, issue: str, status: str = "available"):
-        """
-        Initialize a Journal object.
-
-        Args:
-            item_id (str): Unique ID
-            title (str): Journal title
-            volume (str): Volume number
-            issue (str): Issue number
-            status (str, optional): Availability
-        """
-        super().__init__(item_id, title, "Journal", status)
-        self.volume = volume
-        self.issue = issue
-
-    def calculate_loan_period(self):
-        """Calculate loan period for a journal. Future logic: typically 3 days."""
-        pass
-
-    def calculate_replacement_cost(self):
-        """Calculate replacement cost for a journal."""
-        pass
-
-    def __str__(self):
-        return f"{self.title} Vol:{self.volume} Issue:{self.issue} ({self.item_id})"
