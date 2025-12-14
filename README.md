@@ -293,7 +293,7 @@ Description: Change the status of a library item (e.g., available → checked_ou
 
 
 ## Method Overview & Organization
-## Validation Methods
+### Validation Methods
   - validate_member_id()
   - check_item_availability()
     
@@ -366,26 +366,27 @@ Why Both Matter
 
 ## Contribution Guidelines
      
-Team Member Assignments
-- Phase 1 - Method Implementation:
+###**Team Member Assignments**
+
+- **Phase 1 - Method Implementation:**
   - Jordan Mutunzi: validate_member_id, calculate_due_date
   - Keran Leukeu: compute_overdue_fine, check_item_availability
   - Mayowa 'Mylo' Akinrodoye: format_item_display, generate_checkout_record
   - Francis Okeagu: search_catalog, update_item_status
 
-- Phase 2 - Class Implementation (Project 02):
+- **Phase 2 - Class Implementation (Project 02):**
   - Jordan: Member class, Checkout class
   - Keran: LibraryItem class, Book class
   - Mylo: Catalog class, DVD class
   - Francis: Journal class, CLI interface
 
-- Phase 3 - Advanced OOP (Project 03):
+- **Phase 3 - Advanced OOP (Project 03):**
   - Jordan: AbstractLibraryItem, inheritance refactoring
   - Keran: Polymorphism demonstration, test suite
   - Mylo: Composition relationships, architecture documentation
   - Francis: Demo scripts, integration testing
   
-- Phase 4 - Capstone Integration & Testing (Project 04): 
+- **Phase 4 - Capstone Integration & Testing (Project 04):** 
   
      Jordan:
           - Finalize system integration and ensure all components work together coherently
@@ -411,6 +412,7 @@ Team Member Assignments
           - Organize speaking roles and timing across team members
           - Compile and include individual learning statements and upload/link the final video
                
+
 ### Communication
   Team Meetings: Weekly on Mondays at 6 PM
   Code Reviews: Within 24 hours of PR submission
