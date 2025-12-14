@@ -33,6 +33,12 @@ def run():
         item=item,
         checkout_date="2025-03-01"
     )
-
+    
     print(checkout)
     print(catalog)
+
+
+ # Temporary verification
+    print(catalog)
+    for item in catalog.get_available_items():
+        print(item)
