@@ -147,7 +147,6 @@ Description: Calculate late fees
 ### Check_item_availability - check_item_availability(item_id, catalog)
 Description: Returns True if available, False if checked out
 
-
 ### Format Item Display - format_item_display(item_data)
 Description: Format item information for clean display in the command-line interface
 
@@ -212,7 +211,7 @@ Checkout confirmed!
     Thank you for using the library!
 
 
-###Search Catalog - search_catalog(query, catalog_data)
+### Search Catalog - search_catalog(query, catalog_data)
 Description: Search the library catalog for items matching a query
 Input:
     query (string) - Search term(s) entered by user
@@ -292,24 +291,21 @@ Description: Change the status of a library item (e.g., available → checked_ou
     Step 5: Display confirmation
       → "Checkout complete! Due: November 15, 2024"
 
----
-
----
 
 ## Method Overview & Organization
 ## Validation Methods
   - validate_member_id()
   - check_item_availability()
     
-## Calculation Methods
+### Calculation Methods
   - calculate_due_date()
   - compute_overdue_fine()
 
-# Data Management Methods
+### Data Management Methods
   - generate_checkout_record()
   - update_item_status()
 
-# Display & Search Methods
+### Display & Search Methods
   - format_item_display()
   - search_catalog()
     
@@ -369,32 +365,71 @@ Why Both Matter
 ---
 
 ## Contribution Guidelines
-
-Team Member Assignments
-- Phase 1 - Method Implementation:
-  - Jordan Mutunzi: validate_member_id, calculate_due_date
-  - Keran Leukeu: compute_overdue_fine, check_item_availability
-  - Mayowa Akinrodoye: format_item_display, generate_checkout_record
-  - Francis Okeagu: search_catalog, update_item_status
-
-- Phase 2 - Class Implementation (Project 02):
-  - Jordan: Member class, Checkout class
-  - Keran: LibraryItem class, Book class
-  - Mayowa: Catalog class, DVD class
-  - Francis: Journal class, CLI interface
-
-- Phase 3 - Advanced OOP (Project 03):
-  - Jordan: AbstractLibraryItem, inheritance refactoring
-  - Keran: Polymorphism demonstration, test suite
-  - Mayowa: Composition relationships, architecture documentation
-  - Francis: Demo scripts, integration testing
-
+     
+     Team Member Assignments
+     - Phase 1 - Method Implementation:
+       - Jordan Mutunzi: validate_member_id, calculate_due_date
+       - Keran Leukeu: compute_overdue_fine, check_item_availability
+       - Mayowa 'Mylo' Akinrodoye: format_item_display, generate_checkout_record
+       - Francis Okeagu: search_catalog, update_item_status
+     
+     - Phase 2 - Class Implementation (Project 02):
+       - Jordan: Member class, Checkout class
+       - Keran: LibraryItem class, Book class
+       - Mylo: Catalog class, DVD class
+       - Francis: Journal class, CLI interface
+     
+     - Phase 3 - Advanced OOP (Project 03):
+       - Jordan: AbstractLibraryItem, inheritance refactoring
+       - Keran: Polymorphism demonstration, test suite
+       - Mylo: Composition relationships, architecture documentation
+       - Francis: Demo scripts, integration testing
+       
+     - Phase 4 - Capstone Integration & Testing (Project 04): 
+       
+          Jordan:
+               - Finalize system integration and ensure all components work together coherently
+               - Validate complete end-to-end workflows answer the team’s charter questions
+               - Review and refactor code for architectural clarity and separation of concerns
+               - Support Mylo with debugging and final program polish
+          
+          Keran:
+               - Prepare presentation content focused on testing and system reliability
+               - Explain unit, integration, and system testing strategy in the video
+               - Capture or summarize test results to show that all tests pass
+               - Assist with scripting the “How You Know It Works” portion of the presentation
+          
+          Mylo:
+               - Finalize the repository for submission (file structure, naming, cleanliness)
+               - Ensure data persistence features (save/load, import/export) are complete and stable
+               - Align README documentation with actual program behavior and usage
+               - Verify installation, run instructions, and test commands work as written
+               
+          Francis:
+               - Lead the overall video presentation (5–10 minutes)
+               - Coordinate the system demo showing core workflows and persistence features
+               - Organize speaking roles and timing across team members
+               - Compile and include individual learning statements and upload/link the final video
+               
 ### Communication
   Team Meetings: Weekly on Mondays at 6 PM
   Code Reviews: Within 24 hours of PR submission
   Questions/Issues: Post in team Discord channel
   Blockers: Tag team in GitHub issue immediately  
----
+  
+--
 
 ## 👥 Contributors  
-Team Members: Jordan Mutunzi, Keran Leukeu, Mayowa Akinrodoye, and Francis Okeagu*  
+Team Members: Jordan Mutunzi, Keran Leukeu, Mayowa 'Mylo' Akinrodoye, and Francis Okeagu*  
+
+--
+
+## Instructor Evaluation Notes
+This project is designed as a demonstration of Object-Oriented Programming concepts.
+Running python main.py executes a scripted demo that:
+
+     - Builds a sample catalog
+     - Demonstrates inheritance and polymorphism
+     - Shows composition relationships
+     - Prints results to the console
+     - No user input or configuration is required.
