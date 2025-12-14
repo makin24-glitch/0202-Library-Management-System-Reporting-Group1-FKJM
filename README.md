@@ -366,7 +366,7 @@ Why Both Matter
 
 ## Contribution Guidelines
      
-###**Team Member Assignments**
+### **Team Member Assignments**
 
 - **Phase 1 - Method Implementation:**
   - Jordan Mutunzi: validate_member_id, calculate_due_date
@@ -388,25 +388,25 @@ Why Both Matter
   
 - **Phase 4 - Capstone Integration & Testing (Project 04):** 
   
-     Jordan:
+     - Jordan:
           - Finalize system integration and ensure all components work together coherently
           - Validate complete end-to-end workflows answer the team’s charter questions
           - Review and refactor code for architectural clarity and separation of concerns
           - Support Mylo with debugging and final program polish
      
-     Keran:
+     - Keran:
           - Prepare presentation content focused on testing and system reliability
           - Explain unit, integration, and system testing strategy in the video
           - Capture or summarize test results to show that all tests pass
           - Assist with scripting the “How You Know It Works” portion of the presentation
      
-     Mylo:
+     - Mylo:
           - Finalize the repository for submission (file structure, naming, cleanliness)
           - Ensure data persistence features (save/load, import/export) are complete and stable
           - Align README documentation with actual program behavior and usage
           - Verify installation, run instructions, and test commands work as written
           
-     Francis:
+     - Francis:
           - Lead the overall video presentation (5–10 minutes)
           - Coordinate the system demo showing core workflows and persistence features
           - Organize speaking roles and timing across team members
