@@ -18,7 +18,7 @@ No external APIs or databases are required. All data ships with the program.
 ## Project Structure
 
 ```
-project_root/
+src/
 │
 ├── catalog.py              # Catalog domain class
 ├── checkout.py             # Checkout transaction logic
@@ -29,8 +29,14 @@ project_root/
 │
 ├── data/
 │   └── sample_data.py      # Installed sample data
+├── adapters/
+│   └── catalog_adapter.py
+    └── catalog_loader.py
+    └── memmber_loader.py         
 │
 └── index.md                # This file
+└── README.md              
+
 ```
 
 ---
