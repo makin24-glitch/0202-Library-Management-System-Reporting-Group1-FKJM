@@ -366,50 +366,50 @@ Why Both Matter
 
 ## Contribution Guidelines
      
-     Team Member Assignments
-     - Phase 1 - Method Implementation:
-       - Jordan Mutunzi: validate_member_id, calculate_due_date
-       - Keran Leukeu: compute_overdue_fine, check_item_availability
-       - Mayowa 'Mylo' Akinrodoye: format_item_display, generate_checkout_record
-       - Francis Okeagu: search_catalog, update_item_status
+Team Member Assignments
+- Phase 1 - Method Implementation:
+  - Jordan Mutunzi: validate_member_id, calculate_due_date
+  - Keran Leukeu: compute_overdue_fine, check_item_availability
+  - Mayowa 'Mylo' Akinrodoye: format_item_display, generate_checkout_record
+  - Francis Okeagu: search_catalog, update_item_status
+
+- Phase 2 - Class Implementation (Project 02):
+  - Jordan: Member class, Checkout class
+  - Keran: LibraryItem class, Book class
+  - Mylo: Catalog class, DVD class
+  - Francis: Journal class, CLI interface
+
+- Phase 3 - Advanced OOP (Project 03):
+  - Jordan: AbstractLibraryItem, inheritance refactoring
+  - Keran: Polymorphism demonstration, test suite
+  - Mylo: Composition relationships, architecture documentation
+  - Francis: Demo scripts, integration testing
+  
+- Phase 4 - Capstone Integration & Testing (Project 04): 
+  
+     Jordan:
+          - Finalize system integration and ensure all components work together coherently
+          - Validate complete end-to-end workflows answer the team’s charter questions
+          - Review and refactor code for architectural clarity and separation of concerns
+          - Support Mylo with debugging and final program polish
      
-     - Phase 2 - Class Implementation (Project 02):
-       - Jordan: Member class, Checkout class
-       - Keran: LibraryItem class, Book class
-       - Mylo: Catalog class, DVD class
-       - Francis: Journal class, CLI interface
+     Keran:
+          - Prepare presentation content focused on testing and system reliability
+          - Explain unit, integration, and system testing strategy in the video
+          - Capture or summarize test results to show that all tests pass
+          - Assist with scripting the “How You Know It Works” portion of the presentation
      
-     - Phase 3 - Advanced OOP (Project 03):
-       - Jordan: AbstractLibraryItem, inheritance refactoring
-       - Keran: Polymorphism demonstration, test suite
-       - Mylo: Composition relationships, architecture documentation
-       - Francis: Demo scripts, integration testing
-       
-     - Phase 4 - Capstone Integration & Testing (Project 04): 
-       
-          Jordan:
-               - Finalize system integration and ensure all components work together coherently
-               - Validate complete end-to-end workflows answer the team’s charter questions
-               - Review and refactor code for architectural clarity and separation of concerns
-               - Support Mylo with debugging and final program polish
+     Mylo:
+          - Finalize the repository for submission (file structure, naming, cleanliness)
+          - Ensure data persistence features (save/load, import/export) are complete and stable
+          - Align README documentation with actual program behavior and usage
+          - Verify installation, run instructions, and test commands work as written
           
-          Keran:
-               - Prepare presentation content focused on testing and system reliability
-               - Explain unit, integration, and system testing strategy in the video
-               - Capture or summarize test results to show that all tests pass
-               - Assist with scripting the “How You Know It Works” portion of the presentation
-          
-          Mylo:
-               - Finalize the repository for submission (file structure, naming, cleanliness)
-               - Ensure data persistence features (save/load, import/export) are complete and stable
-               - Align README documentation with actual program behavior and usage
-               - Verify installation, run instructions, and test commands work as written
-               
-          Francis:
-               - Lead the overall video presentation (5–10 minutes)
-               - Coordinate the system demo showing core workflows and persistence features
-               - Organize speaking roles and timing across team members
-               - Compile and include individual learning statements and upload/link the final video
+     Francis:
+          - Lead the overall video presentation (5–10 minutes)
+          - Coordinate the system demo showing core workflows and persistence features
+          - Organize speaking roles and timing across team members
+          - Compile and include individual learning statements and upload/link the final video
                
 ### Communication
   Team Meetings: Weekly on Mondays at 6 PM
@@ -422,7 +422,6 @@ Why Both Matter
 ## 👥 Contributors  
 Team Members: Jordan Mutunzi, Keran Leukeu, Mayowa 'Mylo' Akinrodoye, and Francis Okeagu*  
 
---
 
 ## Instructor Evaluation Notes
 This project is designed as a demonstration of Object-Oriented Programming concepts.
