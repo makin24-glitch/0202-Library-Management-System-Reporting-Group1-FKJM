@@ -1,6 +1,6 @@
 # adapters/catalog_loader.py
 
-from library_items import Book, DVD, Journal
+from LibraryItem import Book, DVD, Journal
 
 
 def load_sample_data_into_catalog(catalog, sample_records):
