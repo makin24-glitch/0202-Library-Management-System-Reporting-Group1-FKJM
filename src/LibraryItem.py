@@ -5,7 +5,7 @@ This module defines specific library items (Book, DVD, Journal) that inherit
 from AbstractLibraryItem and follow the interface requirements.
 """
 
-from abstract_library_item import AbstractLibraryItem  # assuming your ABC is in this file
+from base_class import AbstractLibraryItem
 
 
 class Book(AbstractLibraryItem):
