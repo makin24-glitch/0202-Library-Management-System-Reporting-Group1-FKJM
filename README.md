@@ -2,8 +2,8 @@
 Reporting and Analytics Dashboard Project for INST 326 Object-Oriented Programming
 
 
-## Video Submission
-Video link: https://drive.google.com/drive/u/0/folders/18OePNotr1kImWCtHmI3oASdYrkqKoGDX
+## Video Submission (Google Drive)
+Link: https://drive.google.com/drive/u/0/folders/18OePNotr1kImWCtHmI3oASdYrkqKoGDX
 
 ## 🏗️ Introduction 
 This project focuses on building a **Library/Information Center Management Dashboard** that provides **reporting and analytics tools** to help library staff, administrators, and stakeholders manage operations more efficiently.  
